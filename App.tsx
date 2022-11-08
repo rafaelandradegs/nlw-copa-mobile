@@ -2,9 +2,10 @@ import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@
 import { AuthContextProvider } from "./src/contexts/AuthContext";
 import { NativeBaseProvider, StatusBar } from "native-base";
 import { Loading } from "./src/components/Loading"
-import { Pools } from "./src/screens/Pools";
+// import { Pools } from "./src/screens/Pools";
 
 import { THEME } from "./src/styles/theme"
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold}) 
@@ -19,7 +20,7 @@ export default function App() {
           translucent
           />
         
-        {fontsLoaded ? /**<Signin />**/<Pools /> : <Loading />} 
+        {fontsLoaded ? <Routes /> : <Loading />} 
 
       </AuthContextProvider>
     </NativeBaseProvider>
